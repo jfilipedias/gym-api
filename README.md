@@ -2,6 +2,34 @@
 
 A gym check-in api.
 
+## Getting Started
+
+Setup the app container:
+
+```shell
+docker compose up -d
+```
+
+Setups the environment variables on a `.env` file based on the [.env.example](.env.example) file.
+
+Install the dependencies:
+
+```shell
+npm i
+```
+
+Generate the prisma types:
+
+```shell
+npx prisma generate
+```
+
+Run the database migrations:
+
+```shell
+npx prisma migrate dev
+```
+
 ## Requirements
 
 ### Functional Requirements
