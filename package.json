@@ -1,39 +1,42 @@
 {
-  "name": "gym-api",
-  "version": "1.0.0",
-  "description": "A gym check-in api.",
-  "main": "bundle/server.js",
-  "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "build": "tsup src --out-dir build",
-    "start": "node build/server.js"
-  },
-  "keywords": [
-    "rest",
-    "api",
-    "fastify",
-    "jwt"
-  ],
-  "author": "jfilipedias",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/bcryptjs": "2.4.6",
-    "@types/node": "20.9.0",
-    "@typescript-eslint/eslint-plugin": "6.11.0",
-    "@typescript-eslint/parser": "6.11.0",
-    "eslint": "8.53.0",
-    "eslint-config-prettier": "9.0.0",
-    "prettier": "3.1.0",
-    "prisma": "5.6.0",
-    "tsup": "7.2.0",
-    "tsx": "4.1.2",
-    "typescript": "5.2.2"
-  },
-  "dependencies": {
-    "@prisma/client": "5.6.0",
-    "bcryptjs": "2.4.3",
-    "dotenv": "16.3.1",
-    "fastify": "4.24.3",
-    "zod": "3.22.4"
-  }
+	"name": "gym-api",
+	"version": "1.0.0",
+	"description": "A gym check-in api.",
+	"main": "bundle/server.js",
+	"scripts": {
+		"dev": "tsx watch src/server.ts",
+		"build": "tsup src --out-dir build",
+		"start": "node build/server.js",
+		"test": "vitest run",
+		"test:watch": "vitest"
+	},
+	"keywords": [
+		"rest",
+		"api",
+		"fastify",
+		"jwt"
+	],
+	"author": "jfilipedias",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/bcryptjs": "2.4.6",
+		"@types/node": "20.9.0",
+		"@typescript-eslint/eslint-plugin": "6.11.0",
+		"@typescript-eslint/parser": "6.11.0",
+		"eslint": "8.53.0",
+		"eslint-config-prettier": "9.0.0",
+		"prettier": "3.1.0",
+		"prisma": "5.6.0",
+		"tsup": "7.2.0",
+		"tsx": "4.1.2",
+		"typescript": "5.2.2",
+		"vitest": "0.34.6"
+	},
+	"dependencies": {
+		"@prisma/client": "5.6.0",
+		"bcryptjs": "2.4.3",
+		"dotenv": "16.3.1",
+		"fastify": "4.24.3",
+		"zod": "3.22.4"
+	}
 }
