@@ -1,0 +1,14 @@
+@hostname=http://localhost
+@port=3333
+@host={{hostname}}:{{port}}
+
+
+// Create user
+POST {{host}}/user
+Accept: application/json
+
+{
+  "name": "Filipe Dias",
+  "email": "filipe@email.com",
+  "password": "123456"
+}
