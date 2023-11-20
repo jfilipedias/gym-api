@@ -1,4 +1,3 @@
-import { randomUUID } from 'node:crypto'
 import { hash } from 'bcryptjs'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { InvalidCredentialsError } from '@/errors/invalid-credentials-error'
@@ -16,7 +15,6 @@ describe('Authenticate use case', () => {
 
 	it('should be able to authenticate', async () => {
 		await usersRepository.create({
-			id: randomUUID(),
 			name: 'John Doe',
 			email: 'john.doe@email.com',
 			password_hash: await hash('123456', 6),
@@ -42,7 +40,6 @@ describe('Authenticate use case', () => {
 
 	it('should not to authenticate with wrong password', async () => {
 		await usersRepository.create({
-			id: randomUUID(),
 			name: 'John Doe',
 			email: 'john.doe@email.com',
 			password_hash: await hash('123456', 6),
