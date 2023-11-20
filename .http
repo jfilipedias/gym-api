@@ -2,13 +2,21 @@
 @port=3333
 @host={{hostname}}:{{port}}
 
-
 // Create user
 POST {{host}}/user
 Accept: application/json
 
 {
   "name": "Filipe Dias",
+  "email": "filipe@email.com",
+  "password": "123456"
+}
+
+// Authenticate user
+POST {{host}}/sessions
+Accept: application/json
+
+{
   "email": "filipe@email.com",
   "password": "123456"
 }

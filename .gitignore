@@ -10,3 +10,6 @@ database/*.db
 # Environment Variables
 .env
 .env.test
+
+# Coverage
+coverage
