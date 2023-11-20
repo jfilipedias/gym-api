@@ -37,7 +37,7 @@ npx prisma migrate dev
 - [ ] Should be able to register a gym;
 - [ ] Should be able to get gyms by name;
 - [x] Should be able to register an user;
-- [ ] Should be able to authenticate an user;
+- [X] Should be able to authenticate an user;
 - [ ] Should be able to get the authenticated user profile infos;
 - [ ] Should be able to get the gyms close to the authenticated user;
 - [ ] Should be able to the authenticated user perform a check-in;
