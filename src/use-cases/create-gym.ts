@@ -1,4 +1,5 @@
 import { GymsRepository } from '@/repositories/gyms-repository'
+import { Decimal } from '@prisma/client/runtime/library'
 
 interface CreateGymUseCaseParams {
 	name: string
@@ -8,7 +9,16 @@ interface CreateGymUseCaseParams {
 	longitude: number
 }
 
-interface CreateGymUseCaseResult {}
+interface CreateGymUseCaseResult {
+	gym: {
+		id: string
+		name: string
+		description: string | null
+		phone: string | null
+		latitude: Decimal
+		longitude: Decimal
+	}
+}
 
 export class CreateGymUseCase {
 	constructor(private gymsRepository: GymsRepository) {}
