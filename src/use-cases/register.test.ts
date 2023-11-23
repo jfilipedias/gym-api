@@ -12,10 +12,8 @@ describe('Register use case', () => {
 		usersRepository = new InMemoryUsersRepository()
 		sut = new RegisterUseCase(usersRepository)
 	})
-	it('should be able to register an user', async () => {
-		const userRepository = new InMemoryUsersRepository()
-		const sut = new RegisterUseCase(userRepository)
 
+	it('should be able to register an user', async () => {
 		const { user } = await sut.execute({
 			name: 'John Doe',
 			email: 'john.doe@email.com',
@@ -26,9 +24,6 @@ describe('Register use case', () => {
 	})
 
 	it('should hash a user password upon registration', async () => {
-		const userRepository = new InMemoryUsersRepository()
-		const sut = new RegisterUseCase(userRepository)
-
 		const { user } = await sut.execute({
 			name: 'John Doe',
 			email: 'john.doe@email.com',
