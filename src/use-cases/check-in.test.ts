@@ -1,4 +1,3 @@
-import { randomUUID } from 'node:crypto'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { MaxDailyCheckInError } from '@/errors/max-daily-check-in-error'
 import { MaxDistanceError } from '@/errors/max-distance-error'
@@ -12,7 +11,6 @@ describe('Check-in use case', () => {
 	let sut: CheckInUseCase
 
 	let gymId: string
-	let userId: string
 
 	beforeEach(async () => {
 		checkInsRepository = new InMemoryCheckInsRepository()
@@ -28,7 +26,6 @@ describe('Check-in use case', () => {
 		})
 
 		gymId = gym.id
-		userId = randomUUID()
 
 		vi.useFakeTimers()
 	})
@@ -39,7 +36,7 @@ describe('Check-in use case', () => {
 
 	it('should be able to check in', async () => {
 		const { checkIn } = await sut.execute({
-			userId,
+			userId: 'user-01',
 			gymId,
 			userLatitude: -3.6940046,
 			userLongitude: -38.586241,
@@ -52,7 +49,7 @@ describe('Check-in use case', () => {
 		vi.setSystemTime(new Date(2022, 0, 11, 8, 0, 0))
 
 		await sut.execute({
-			userId,
+			userId: 'user-01',
 			gymId,
 			userLatitude: -3.6940046,
 			userLongitude: -38.586241,
@@ -60,7 +57,7 @@ describe('Check-in use case', () => {
 
 		await expect(() =>
 			sut.execute({
-				userId,
+				userId: 'user-01',
 				gymId,
 				userLatitude: -3.6940046,
 				userLongitude: -38.586241,
@@ -72,7 +69,7 @@ describe('Check-in use case', () => {
 		vi.setSystemTime(new Date(2022, 0, 11, 8, 0, 0))
 
 		await sut.execute({
-			userId,
+			userId: 'user-01',
 			gymId,
 			userLatitude: -3.6940046,
 			userLongitude: -38.586241,
@@ -81,7 +78,7 @@ describe('Check-in use case', () => {
 		vi.setSystemTime(new Date(2022, 0, 12, 8, 0, 0))
 
 		const { checkIn } = await sut.execute({
-			userId,
+			userId: 'user-01',
 			gymId,
 			userLatitude: -3.6940046,
 			userLongitude: -38.586241,
@@ -93,7 +90,7 @@ describe('Check-in use case', () => {
 	it('should not be able to check in at a distance greater than 100 meters from the gym', async () => {
 		await expect(() =>
 			sut.execute({
-				userId,
+				userId: 'user-01',
 				gymId,
 				userLatitude: -3.7464448,
 				userLongitude: -38.5737754,
