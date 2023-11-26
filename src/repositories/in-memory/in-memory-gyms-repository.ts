@@ -4,7 +4,7 @@ import { Decimal } from '@prisma/client/runtime/library'
 import { GymsRepository } from '@/repositories/gyms-repository'
 
 export class InMemoryGymsRepository implements GymsRepository {
-	public items: Gym[] = []
+	public gyms: Gym[] = []
 
 	async create(data: Prisma.GymCreateInput) {
 		const gym = {
@@ -16,13 +16,13 @@ export class InMemoryGymsRepository implements GymsRepository {
 			longitude: new Decimal(data.longitude.toString()),
 		}
 
-		this.items.push(gym)
+		this.gyms.push(gym)
 
 		return gym
 	}
 
 	async findById(id: string) {
-		const gym = this.items.find((gym) => gym.id === id)
+		const gym = this.gyms.find((gym) => gym.id === id)
 
 		if (!gym) {
 			return null
