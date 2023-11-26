@@ -41,7 +41,7 @@ npx prisma migrate dev
 - [x] Should be able to get the authenticated user profile infos;
 - [x] Should be able to get the gyms close to the authenticated user;
 - [x] Should be able for the authenticated user to check in to a gym;
-- [ ] Should be able to validate an user check-in;
+- [x] Should be able to validate an user check-in;
 - [x] Should be able to get the total number of check-in performed by an authenticated user;
 - [x] Should be able to get the authenticated user check-in history;
 
