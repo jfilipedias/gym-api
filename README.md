@@ -50,7 +50,7 @@ npx prisma migrate dev
 - [x] Should not be able to register an user with an already used e-amil;
 - [x] Should not be able to check in more than once a day;
 - [x] Should not be able to check in at a distance greater than 100 meters from the gym;
-- [ ] Should not be able to validade a check-in after 20 minutes of its register;
+- [x] Should not be able to validade a check-in after 20 minutes of its register;
 - [ ] Only admin users should be able to validate a check-ins;
 - [ ] Only admin users should be able to register a gym;
 
