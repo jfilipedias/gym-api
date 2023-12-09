@@ -1,10 +1,11 @@
 @hostname=http://localhost
 @port=3333
 @host={{hostname}}:{{port}}
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzYWJmNjcwOC0zM2RiLTRmNjAtYjAyZC1jNTA1NmJiMWM0MDUiLCJpYXQiOjE3MDIxMzEzMDR9.Sk1Xco6NoULcgmgdzo5IZrYjJOnFvzlQZzTj5hb-IoQ
 
 // Create user
-POST {{host}}/user
-Accept: application/json
+POST {{host}}/users
+Content-Type: application/json
 
 {
   "name": "Filipe Dias",
@@ -12,11 +13,19 @@ Accept: application/json
   "password": "123456"
 }
 
+###
+
 // Authenticate user
 POST {{host}}/sessions
-Accept: application/json
+Content-Type: application/json
 
 {
   "email": "filipe@email.com",
   "password": "123456"
 }
+
+###
+
+// List user profile
+GET {{host}}/me
+Authorization: Bearer {{token}}
