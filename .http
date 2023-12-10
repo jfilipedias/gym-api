@@ -1,7 +1,7 @@
 @hostname=http://localhost
 @port=3333
 @host={{hostname}}:{{port}}
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzYWJmNjcwOC0zM2RiLTRmNjAtYjAyZC1jNTA1NmJiMWM0MDUiLCJpYXQiOjE3MDIxMzEzMDR9.Sk1Xco6NoULcgmgdzo5IZrYjJOnFvzlQZzTj5hb-IoQ
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzYWJmNjcwOC0zM2RiLTRmNjAtYjAyZC1jNTA1NmJiMWM0MDUiLCJpYXQiOjE3MDIyMTc1MTZ9.xP1VR7XYW_b1KHdNc_HHfJ0SKO-VY671vt6NSkQS_i0
 
 // Create user
 POST {{host}}/users
