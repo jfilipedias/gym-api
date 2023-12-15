@@ -1,9 +1,0 @@
-{
-	"recommendations": [
-		"dbaeumer.vscode-eslint",
-		"mikestead.dotenv",
-		"esbenp.prettier-vscode",
-		"humao.rest-client",
-		"prisma.prisma"
-	]
-}
